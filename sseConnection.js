@@ -2,9 +2,10 @@
 const sseClients = [];
 
 function sendSSEData(data) {
-  sseClients.forEach(client => {
+  {/*sseClients.forEach(client => {
     client.res.write(`data: ${JSON.stringify(data)}\n\n`);
-  });
+  });*/}
+  console.log('MFFFFF')
 }
 
 function sseMiddleware(req, res, next) {

@@ -5,7 +5,7 @@ const socketIO = require('socket.io'); // Add this line to import socket.io
 
 
 const port = process.env.PORT || 8080;
-const publicIP = '192.168.1.10'; // Replace this with your public IP address
+//const publicIP = ''; // Replace this with your public IP address
 
 const server = http.createServer(app);
 const io = socketIO(server); // Create a socket.io instance and attach it to the server
@@ -29,6 +29,6 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(port, publicIP, () => {
+server.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
