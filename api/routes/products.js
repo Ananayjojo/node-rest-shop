@@ -145,7 +145,17 @@ router.delete("/:productId", (req, res, next) => {
         });
 });
 
-
+router.delete("/deleteAll", (req, res, next) => {
+    Product.deleteMany({})
+      .exec()
+      .then(result => {
+        res.status(200).json({ message: "All entries deleted successfully." });
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json({ error: err });
+      });
+  });
 
 
 module.exports = router;
